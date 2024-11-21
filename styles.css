@@ -9,7 +9,7 @@
 body {
     font-family: 'Cascadia Code', sans-serif;
     height: 100vh;
-    background: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+    background: linear-gradient(to top, #57b9ff 0%, #0000ff 100%);
     display: flex;
     justify-content: center;
     align-items: center;
