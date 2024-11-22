@@ -5,9 +5,14 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: myFont;
+    src: url(CC_font.ttf);
+}
+
 /* Gradient Background */
 body {
-    font-family: 'font', sans-serif;
+    font-family: 'myFont', sans-serif;
     height: 100vh;
     background: linear-gradient(to top, #57b9ff 0%, #0000ff 100%);
     display: flex;
