@@ -44,33 +44,28 @@ body {
 /* Button styling with hover effect */
          .btn {background-image: linear-gradient(to right, #1A2980 0%, #26D0CE  51%, #1A2980  100%)}
          .btn {
-            margin: 10px;
+            margin: 1px;
             padding: 10px 30px;
             text-align: center;
-            text-transform: uppercase;
             transition: 0.5s;
             background-size: 200% auto;
             color: white;            
             box-shadow: 0 0 20px #eee;
             border-radius: 10px;
-            display: block;
-          }
+            display: inline-block;
+         }
 
           .btn:hover {
             background-position: right center; /* change the direction of the change here */
             color: #fff;
             text-decoration: none;
-          }
-         
+          
+            box-shadow: 0 0 20px #eee;
     color: #fff;
     border-radius: 30px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.btn:hover {
-    background-color: #ff3d2e;
+    transition: 0.5s;
     transform: scale(1.1);
-}
+          }
 
 /* Media Queries for responsiveness */
 @media (max-width: 768px) {
