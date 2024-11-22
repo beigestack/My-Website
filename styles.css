@@ -67,6 +67,30 @@ body {
     transform: scale(1.1);
           }
 
+          .footer {
+            position: fixed; /* Keeps it at the bottom even when scrolling */
+            top: 0; /* Position at the very bottom */
+            width: 100%; /* Span the entire width */
+            text-align: center; /* Center the text */
+            background-color: #f4f4f4; /* Optional: add a background for visibility */
+            padding: 10px 0; /* Add some padding */
+            font-size: 14px; /* Adjust font size if needed */
+            color: #333; /* Font color */
+        }
+
+        .above {
+            position: fixed; /* Keeps it at the bottom even when scrolling */
+            bottom: 0; /* Position at the very bottom */
+            width: 100%; /* Span the entire width */
+            text-align: Center; /* Center the text */
+            background-color: #f4f4f4; /* Optional: add a background for visibility */
+            padding: 10px 0; /* Add some padding */
+            font-size: 14px; /* Adjust font size if needed */
+            color: #333; /* Font color */
+            display: inline-block;
+            width: 70;
+        }
+
 /* Media Queries for responsiveness */
 @media (max-width: 768px) {
     .title {
