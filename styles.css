@@ -14,7 +14,7 @@
 body {
     font-family: 'myFont', sans-serif;
     height: 100vh;
-    background: linear-gradient(to top, #57b9ff 0%, #0000ff 100%);
+    background: linear-gradient(to top, #57b9ff 0%, #0000ff 110%);
     display: flex;
     justify-content: center;
     align-items: center;
