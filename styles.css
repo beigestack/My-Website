@@ -37,11 +37,12 @@ width: 100%; /* Ensure it takes full width */
 max-width: 1000px; /* Optional: set a max width for better readability */
 }
 
-/* Image style */
 .container img {
-    display: block; /* Makes the image a block element */
-    margin: 0 auto; /* Centers the image */
-    margin-top: 20px; /* Add margin to the top of the container */
+    display: block; /* Make image a block element */
+    margin: 0 auto; /* Center the image */
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
 }
 
 /* Styling the heading */
