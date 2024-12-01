@@ -13,12 +13,13 @@
 /* Gradient Background */
 body {
     font-family: 'myFont', sans-serif;
-    height: 100vh;
-    background: linear-gradient(to top, #57b9ff 0%, #0000ff 110%);
+    background: linear-gradient(to top, #57b9ff 0%, #0000ff 100%);
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Change to flex-start to align content to the top */
     color: #fff;
+    padding: 20px; /* Add some padding to the body */
+    min-height: 100vh; /* Ensure it takes at least the full height */
 }
 
 /* Centering content */
@@ -28,6 +29,8 @@ body {
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 100%; /* Ensure it takes full width */
+    max-width: 800px; /* Optional: set a max width for better readability */
 }
 
 /* Image style */
