@@ -1,115 +1,109 @@
 /* Reset some basic styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+@font-face {
+font-family: myFont;
+src: url(CC_font.ttf);
 }
 
 /* Gradient Background */
 body {
-    font-family: 'myFont', sans-serif;
-    height: 100vh;
-    background: linear-gradient(to top, #57b9ff 0%, #0000ff 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
+font-family: 'myFont', sans-serif;
+height: 100vh;
+background: linear-gradient(to top, #57b9ff 0%, #0000ff 100%);
+display: flex;
+justify-content: center;
+align-items: center;
+color: #fff;
 }
 
 /* Centering content */
 .container {
-    text-align: center;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    max-width: 800px; /* Optional: Limiting the width */
-    width: 100%;
+text-align: center;
+background: rgba(0, 0, 0, 0.5);
+padding: 40px;
+border-radius: 10px;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Styling the heading */
 .title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-    color: #fffcfc;
+font-size: 2.5rem;
+font-weight: bold;
+letter-spacing: 2px;
+margin-bottom: 20px;
+color: #fffcfc;
 }
 
 /* Description text styling */
 .description {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    line-height: 1.6;
+font-size: 1.2rem;
+margin-bottom: 30px;
+line-height: 1.6;
 }
 
 /* Button styling with hover effect */
+.btn {background-image: linear-gradient(to right, #1A2980 0%, #26D0CE  51%, #1A2980  100%)}
 .btn {
-    background-image: linear-gradient(to right, #1A2980 0%, #26D0CE 51%, #1A2980 100%);
-    margin-right: 10px;
-    padding: 10px 30px;
-    text-align: center;
-    transition: 0.5s;
-    background-size: 200% auto;
-    color: white;            
-    box-shadow: 0 0 20px #eee;
-    border-radius: 10px;
-    display: inline-block;
+            margin: 1px;
+            margin-right: 10px;
+padding: 10px 30px;
+text-align: center;
+transition: 0.5s;
+background-size: 200% auto;
+color: white;            
+box-shadow: 0 0 20px #eee;
+border-radius: 10px;
+display: inline-block;
 }
 
 .btn:hover {
-    background-position: right center; 
-    color: #fff;
-    text-decoration: none;
-    box-shadow: 0 0 20px #eee;
-    border-radius: 30px;
-    transition: 0.5s;
-    transform: scale(1.1);
+background-position: right center; /* change the direction of the change here */
+color: #fff;
+text-decoration: none;
+
+box-shadow: 0 0 20px #eee;
+color: #fff;
+border-radius: 30px;
+transition: 0.5s;
+transform: scale(1.1);
 }
 
-/* Styling the DaVidTools section */
-footer {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    font-size: 1.2rem;
-}
-
-/* Footer and fixed positioning adjustments */
 .footer {
-    position: fixed;
-    width: 100%;
-    text-align: center;
-    background-color: #f4f4f4;
-    padding: 10px 0;
-    font-size: 14px;
-    color: #333;
+position: fixed; /* Keeps it at the bottom even when scrolling */
+top: 0; /* Position at the very bottom */
+width: 100%; /* Span the entire width */
+text-align: center; /* Center the text */
+background-color: #f4f4f4; /* Optional: add a background for visibility */
+padding: 10px 0; /* Add some padding */
+font-size: 14px; /* Adjust font size if needed */
+color: #333; /* Font color */
 }
 
 .above {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    background-color: #f4f4f4;
-    padding: 10px 0;
-    font-size: 14px;
-    color: #333;
-    display: inline-block;
+position: fixed; /* Keeps it at the bottom even when scrolling */
+bottom: 0; /* Position at the very bottom */
+width: 100%; /* Span the entire width */
+text-align: Center; /* Center the text */
+background-color: #f4f4f4; /* Optional: add a background for visibility */
+padding: 10px 0; /* Add some padding */
+font-size: 14px; /* Adjust font size if needed */
+color: #333; /* Font color */
+display: inline-block;
+width: 70;
 }
 
 /* Media Queries for responsiveness */
 @media (max-width: 768px) {
-    .title {
-        font-size: 2rem;
-    }
+.title {
+font-size: 2rem;
+}
 
-    .description {
-        font-size: 1rem;
-    }
-
-    footer {
-        font-size: 1rem;
-    }
+.description {
+font-size: 1rem;
+}
 }
