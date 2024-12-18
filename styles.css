@@ -25,6 +25,10 @@ min-height: 100vh; /* Ensure it takes at least the full height */
     overflow: auto; /* Allow scrolling if content exceeds viewport height */
 }
 
+img {
+  float: left;
+}
+
 /* Centering content */
 .container {
     text-align: center; /* This centers text and images */
