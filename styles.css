@@ -27,16 +27,22 @@
 
         /* Gradient background animation */
         @keyframes gradientShift {
-            0% {
-                background: linear-gradient(135deg, #57b9ff 0%, #0000ff 100%);
-            }
-            50% {
-                background: linear-gradient(135deg, #7fbfff 0%, #4b0082 100%);
-            }
-            100% {
-                background: linear-gradient(135deg, #57b9ff 0%, #0000ff 100%);
-            }
-        }
+    0% {
+        background: linear-gradient(135deg, #57b9ff 0%, #0000ff 100%);
+    }
+    25% {
+        background: linear-gradient(135deg, #7fbfff 0%, #4b0082 100%);
+    }
+    50% {
+        background: linear-gradient(135deg, #7fbfff 0%, #57b9ff 100%);
+    }
+    75% {
+        background: linear-gradient(135deg, #57b9ff 0%, #4b0082 100%);
+    }
+    100% {
+        background: linear-gradient(135deg, #57b9ff 0%, #0000ff 100%);
+    }
+}
 
         /* Centered content container */
         .container {
