@@ -1,101 +1,144 @@
-/* Reset some basic styles */
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-}
+ /* Reset basic styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-@font-face {
-font-family: myFont;
-src: url(CC_font.ttf);
-}
+        /* Custom font */
+        @font-face {
+            font-family: 'myFont';
+            src: url('CC_font.ttf');
+        }
 
-/* Gradient Background */
-body {
-font-family: 'myFont', sans-serif;
-background: linear-gradient(to top, #57b9ff 0%, #0000ff 100%);
-display: flex;
-justify-content: center;
-    align-items: flex-start; /* Change to flex-start to align content to the top */
-    align-items: flex-start; /* Align items to the top */
-color: #fff;
-    padding: 20px; /* Add some padding to the body */
-    padding: 20px; /* Add padding to the body */
-min-height: 100vh; /* Ensure it takes at least the full height */
-    overflow: auto; /* Allow scrolling if content exceeds viewport height */
-}
+        /* Body Styling: Add an elegant gradient background with subtle animations */
+        body {
+            font-family: 'myFont', sans-serif;
+            background: linear-gradient(135deg, #57b9ff 0%, #0000ff 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            padding: 20px;
+            min-height: 100vh;
+            overflow: hidden;
+            animation: gradientShift 8s infinite alternate;
+        }
 
-img {
-  float: left;
-}
+        /* Gradient background animation */
+        @keyframes gradientShift {
+            0% {
+                background: linear-gradient(135deg, #57b9ff 0%, #0000ff 100%);
+            }
+            50% {
+                background: linear-gradient(135deg, #7fbfff 0%, #4b0082 100%);
+            }
+            100% {
+                background: linear-gradient(135deg, #57b9ff 0%, #0000ff 100%);
+            }
+        }
 
-/* Centering content */
-.container {
-    text-align: center; /* This centers text and images */
-    text-align: center; /* Center text and images */
-background: rgba(0, 0, 0, 0.5);
-padding: 100px;
-border-radius: 100px;
-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-width: 100%; /* Ensure it takes full width */
-max-width: 1000px; /* Optional: set a max width for better readability */
-}
+        /* Centered content container */
+        .container {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 60px 40px;
+            border-radius: 30px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+            width: 90%;
+            max-width: 800px;
+            backdrop-filter: blur(10px); /* Adds a frosted glass effect */
+            animation: fadeIn 2s ease-out;
+        }
 
-.container img {
-    display: block; /* Make image a block element */
-    margin: 0 auto; /* Center the image */
-    width: 100%; /* Make the image responsive */
-    height: auto; /* Maintain aspect ratio */
-    transition: transform 0.3s ease; /* Smooth transition for scaling */
-}
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
 
-/* Styling the heading */
-.title {
-font-size: 2.5rem;
-font-weight: bold;
-letter-spacing: 2px;
-margin-bottom: 20px;
-color: #fffcfc;
-}
+        /* Image Styling */
+        .container img {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-/* Description text styling */
-.description {
-font-size: 1.2rem;
-margin-bottom: 30px;
-line-height: 1.6;
-}
+        .container img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+        }
 
-/* Button styling with hover effect */
-.btn {
-background-image: linear-gradient(to right, #1A2980 0%, #26D0CE 51%, #1A2980 100%);
-margin: 1px;
-margin-right: 10px;
-padding: 10px 30px;
-text-align: center;
-transition: 0.5s;
-background-size: 200% auto;
-color: white;
-box-shadow: 0 0 20px #eee;
-border-radius: 10px;
-display: inline-block;
-}
+        /* Styling for heading */
+        .title {
+            font-size: 3rem;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            color: #ffffff;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
 
-.btn:hover {
-background-position: right center; /* change the direction of the change here */
-color: #fff;
-text-decoration: none;
-box-shadow: 0 0 20px #eee;
-border-radius: 30px;
-transform: scale(1.1);
-}
+        /* Description styling */
+        .description {
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            line-height: 1.8;
+            color: #dcdcdc;
+        }
 
-/* Media Queries for responsiveness */
-@media (max-width: 768px) {
-.title {
-font-size: 2rem;
-}
+        /* Button styling with vibrant hover effects */
+        .btn {
+            background: linear-gradient(to right, #1A2980 0%, #26D0CE 100%);
+            color: white;
+            padding: 15px 40px;
+            margin: 10px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
+            background-size: 200% auto;
+            display: inline-block;
+        }
 
-.description {
-font-size: 1rem;
-}
-}
+        .btn:hover {
+            background-position: right center;
+            color: #fff;
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2.5rem;
+            }
+
+            .description {
+                font-size: 1.2rem;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+
+            .btn {
+                padding: 10px 30px;
+                font-size: 1rem;
+            }
+        }
