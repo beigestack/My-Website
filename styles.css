@@ -22,7 +22,7 @@
             padding: 20px;
             min-height: 100vh;
             overflow: auto;
-            animation: gradientShift 8s infinite alternate;
+            animation: gradientShift 15s infinite alternate ease-in-out;
         }
 
         /* Gradient background animation */
@@ -30,19 +30,23 @@
     0% {
         background: linear-gradient(135deg, #57b9ff 0%, #0000ff 100%);
     }
-    25% {
+    20% {
         background: linear-gradient(135deg, #7fbfff 0%, #4b0082 100%);
     }
-    50% {
-        background: linear-gradient(135deg, #7fbfff 0%, #57b9ff 100%);
+    40% {
+        background: linear-gradient(135deg, #57b9ff 0%, #7fbfff 100%);
     }
-    75% {
-        background: linear-gradient(135deg, #57b9ff 0%, #4b0082 100%);
+    60% {
+        background: linear-gradient(135deg, #4b0082 0%, #57b9ff 100%);
+    }
+    80% {
+        background: linear-gradient(135deg, #7fbfff 0%, #0000ff 100%);
     }
     100% {
         background: linear-gradient(135deg, #57b9ff 0%, #0000ff 100%);
     }
 }
+
 
         /* Centered content container */
         .container {
