@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>ATLAS</title>
+</head>
+
+<body bgcolor="grey">
+  <style>
+    #grad1 {
+      height: 55px;
+      background: rgb(35, 255, 0);
+      background: linear-gradient(90deg, rgba(35, 255, 0, 1) 0%, rgba(0, 255, 231, 1) 47%, rgba(0, 18, 255, 1) 100%);
+    }
+  </style>
+  <font face="Cascadia Code">
+    <div id="grad1" style="text-align:center;margin:auto;color:#888888;font-size:40px;font-weight:bold">
+      letsplayatlas.w3spaces.com
+    </div>
+  </font>
+  <br>
+  <font face="Cascadia Code" color="blue">
+    <p>Made by Manik Sharma</p>
+    <p>A bit in the early stages though!</p>
+    <br><br><br>
+    <input type="button" id="btnSearch" value="Random country" onclick="getvalue()" />
+    <p id="message">Click the button above to get a random country!</p>
+    <input type="text" id="mytext" oninput="oninputchange()" placeholder="Enter country here..." />
+    <button onclick="myfunction()">Submit</button>
+    <p id="demo"></p>
+  </font>
