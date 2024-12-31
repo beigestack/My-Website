@@ -3,23 +3,34 @@
 
 <head>
   <title>ATLAS</title>
+  <style>
+    @font-face {
+    font-family: 'CascadiaCode';
+    src: url('CC_font.TTF') format('truetype');
+    }
+    body {
+      background-color: grey;
+      font-family: CascadiaCode, sans-serif;
+      color: blue;
+      text-align: center;
+    }
+    #grad1 {
+      height: 55px;
+      background: linear-gradient(90deg, rgba(35, 255, 0, 1) 0%, rgba(0, 255, 231, 1) 47%, rgba(0, 18, 255, 1) 100%);
+      color: #888888;
+      font-size: 40px;
+      font-weight: bold;
+      line-height: 55px;
+      margin: auto;
+    }
+    p, h1 {
+      font-family: "CascadiaCode", monospace;
+    }
+  </style>
 </head>
 
 <body bgcolor="grey">
-  <style>
-    #grad1 {
-      height: 55px;
-      background: rgb(35, 255, 0);
-      background: linear-gradient(90deg, rgba(35, 255, 0, 1) 0%, rgba(0, 255, 231, 1) 47%, rgba(0, 18, 255, 1) 100%);
-    }
-     @font-face { font-family: CC; src: url('CC_font.TTF'); } 
-      h1 {
-         font-family: CC
-      }
-    p {
-         font-family: CC
-      }
-  </style>
+  <script src="atlasjs.js"></script>
   <font face="Cascadia Code">
     <div id="grad1" style="text-align:center;margin:auto;color:#888888;font-size:40px;font-weight:bold">
       maniksharma69420.github.io/atlas
