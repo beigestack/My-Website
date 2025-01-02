@@ -13,7 +13,7 @@
 
         @font-face {
             font-family: 'headerFont';
-            sec: url('CC_font.ttf');
+            src: url('CC_font.ttf');
         }
 
         /* Body Styling: Add an elegant gradient background with subtle animations */
@@ -33,7 +33,7 @@ body {
 }
 
 /* DEMO-SPECIFIC STYLES */
-.h1 {
+h1 {
   color: #fff;
   font-family: headerFont;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
