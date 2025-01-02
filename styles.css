@@ -8,7 +8,7 @@
         /* Custom font */
         @font-face {
             font-family: 'myFont';
-            src: url('CC_font.ttf');
+            src: url('sysui.otf');
         }
 
         /* Body Styling: Add an elegant gradient background with subtle animations */
