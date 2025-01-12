@@ -129,5 +129,59 @@
         // Optional: Run the function on window resize
         window.onresize = checkImageSize;
     </script>
+    <style>
+        
+.button1 {
+background: linear-gradient(to right, #1A2980 0%, #26D0CE 100%);
+            color: white;
+            padding: 15px 40px;
+            margin: 10px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            background-size: 200% auto;
+  border-radius: 60px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  overflow: hidden;
+  width: 40px; /* Start as a small button */
+  transition: width 0.5s ease; /* Smooth expansion */
+  position: relative; /* Prevents logo or text shifting */
+}
+
+.button1:hover {
+  width: 140px; /* Expands only to the right */
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px; /* Keeps the Poki logo in the center of the small button */
+  flex-shrink: 0; /* Prevents the icon from shrinking when text appears */
+}
+
+.icon img {
+  height: 20px;
+  width: 20px;
+}
+
+.text {
+  white-space: nowrap;
+  opacity: 0; /* Initially hidden */
+  padding-left: 8px;
+  transition: opacity 0.5s ease; /* Smooth fade-in effect */
+}
+
+.button1:hover .text {
+  opacity: 1; /* Text appears on hover */
+}
+
+    </style>
 </body>
 </html>
