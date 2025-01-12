@@ -100,6 +100,12 @@
           </span>
           <span class="text">Email me!</span>
         </a>
+        <a href="mailto:manik.manu@hotmail.com" class="twitterbutton>
+          <span class="twittericon">
+            <img src="twitter_logo.png" alt="Check out my twitter!">
+          </span>
+          <span class="twittertext">Check out my twitter!</span>
+        </a>
         <br><br><br>
         <p xmlns:cc="http://creativecommons.org/ns#" ><a rel="cc:attributionURL" href="https://github.com/ManikSharma69420">This work</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://maniksharma69420.github.io/">Manik Sharma</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
         </center>
@@ -131,7 +137,7 @@
     </script>
     <style>
         
-.button1 {
+.emailbutton {
 background: linear-gradient(to right, #1A2980 0%, #26D0CE 100%);
             color: white;
             padding: 15px 40px;
@@ -154,7 +160,7 @@ background: linear-gradient(to right, #1A2980 0%, #26D0CE 100%);
   position: relative; /* Prevents logo or text shifting */
 }
 
-.button1:hover {
+.emailbutton:hover {
   width: 140px; /* Expands only to the right */
 }
 
@@ -178,7 +184,35 @@ background: linear-gradient(to right, #1A2980 0%, #26D0CE 100%);
   transition: opacity 0.5s ease; /* Smooth fade-in effect */
 }
 
-.button1:hover .text {
+.twitterbutton:hover .text {
+  opacity: 1; /* Text appears on hover */
+}
+
+.twitterbutton:hover {
+  width: 140px; /* Expands only to the right */
+}
+
+.twittericon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px; /* Keeps the Poki logo in the center of the small button */
+  flex-shrink: 0; /* Prevents the icon from shrinking when text appears */
+}
+
+.twittericon img {
+  height: 20px;
+  width: 20px;
+}
+
+.twittertext {
+  white-space: nowrap;
+  opacity: 0; /* Initially hidden */
+  padding-left: 8px;
+  transition: opacity 0.5s ease; /* Smooth fade-in effect */
+}
+
+.twitterbutton:hover .text {
   opacity: 1; /* Text appears on hover */
 }
 
