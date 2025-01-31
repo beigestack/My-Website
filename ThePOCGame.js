@@ -148,6 +148,10 @@ async function play() {
             context.fillStyle = "white";
             context.fillText("ENDLESS MODE", 150, 600);
         }
+
+        if (playerVelocity > 75) {
+            playerVelocity = 75;
+        }
         
         if (isGamePaused) {
             renderPauseScreen();
@@ -166,11 +170,15 @@ async function main() {
 
     setupEventListeners();
 
+    // Determine font size based on screen width
+    let titleFontSize = window.innerWidth <= 600 ? "40px" : "75px"; // Smaller font on mobile
+
     context.fillStyle = "black";
     context.fillRect(0, 0, gameWindow.width, gameWindow.height);
-    context.font = "75px Consolas";
+    context.font = titleFontSize + " Consolas"; // Dynamic font size for title
     context.fillStyle = "white";
     context.fillText("ThePOCGame", 35, 200);
+
     context.font = "20px Consolas";
     context.fillText("Press Enter or Tap to Play", 75, 600);
 
@@ -188,6 +196,7 @@ async function main() {
         }
     }
 }
+
 
 function collides(rect1, rect2) {
     return (
