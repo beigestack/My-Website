@@ -20,7 +20,7 @@ function getEvents() {
 async function play() {
     document.body.innerHTML = ''; // Clear previous elements
 
-    let score = 60;
+    let score = 0;
     let speed = 6;
 
     const gameWindow = document.createElement('canvas');
