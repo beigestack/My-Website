@@ -9,11 +9,23 @@ function setupEventListeners() {
     document.addEventListener('keyup', (event) => {
         events.push({ type: 'keyup', key: event.key });
     });
+
+    document.addEventListener("touchstart", function(event) {
+        event.preventDefault();
+
+        if (event.touches.length === 2) {
+            // Two-finger tap toggles pause
+            isGamePaused = !isGamePaused;
+        } else if (event.touches.length === 1 && !isGamePaused) {
+            // Single tap makes the player jump
+            events.push({ type: 'touchstart' });
+        }
+    });
 }
 
 function getEvents() {
     let currentEvents = [...events];
-    events = []; // Clear events after reading
+    events = [];
     return currentEvents;
 }
 
@@ -49,7 +61,7 @@ async function play() {
         context.fillStyle = "white";
         context.fillText("Paused", 150, 300);
         context.font = "20px Consolas";
-        context.fillText("Press P or Escape to Continue", 75, 350);
+        context.fillText("Two-Finger Tap or Press P to Resume", 35, 350);
     }
 
     while (true) {
@@ -86,14 +98,19 @@ async function play() {
         for (const event of getEvents()) {
             if (event.type === 'keydown') {
                 if (event.key === ' ' || event.key === 'ArrowUp') {
-                    playerVelocity = jumpStrength;
+                    if (!isGamePaused) playerVelocity = jumpStrength;
                 }
                 if (event.key === 'p' || event.key === 'Escape') {
                     isGamePaused = !isGamePaused;
                 }
             }
+
+            if (event.type === 'touchstart') {
+                playerVelocity = jumpStrength; // Single tap to jump
+            }
         }
 
+        // Clear screen
         context.clearRect(0, 0, gameWindow.width, gameWindow.height);
         context.fillStyle = "black";
         context.fillRect(0, 0, gameWindow.width, gameWindow.height);
@@ -155,12 +172,16 @@ async function main() {
     context.fillStyle = "white";
     context.fillText("ThePOCGame", 35, 200);
     context.font = "20px Consolas";
-    context.fillText("Press Enter to Play", 75, 600);
+    context.fillText("Press Enter or Tap to Play", 75, 600);
 
     while (true) {
         await new Promise(resolve => setTimeout(resolve, 100));
         for (const event of getEvents()) {
             if (event.type === 'keydown' && event.key === 'Enter') {
+                play();
+                return;
+            }
+            if (event.type === 'touchstart') {
                 play();
                 return;
             }
