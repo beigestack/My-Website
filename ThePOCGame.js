@@ -180,7 +180,7 @@ async function main() {
     context.fillText("ThePOCGame", 35, 200);
 
     context.font = "20px Consolas";
-    context.fillText("Press Enter or Tap to Play", 125, 600);
+    context.fillText("Press Enter or Tap to Play", 100, 600);
 
     while (true) {
         await new Promise(resolve => setTimeout(resolve, 100));
