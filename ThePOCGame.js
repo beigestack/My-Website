@@ -61,7 +61,7 @@ async function play() {
         context.fillStyle = "white";
         context.fillText("Paused", 150, 300);
         context.font = "16px Consolas";
-        context.fillText("Two-Finger Tap or Press ESC or P to Resume", 36, 350);
+        context.fillText("Two-Finger Tap or Press ESC or P to Resume", 45, 350);
     }
 
     while (true) {
