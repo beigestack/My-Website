@@ -13,7 +13,7 @@
 
         @font-face {
             font-family: 'headerFont';
-            src: url('CC_font.ttf');
+            src: url('SFUIMonoSB.otf');
         }
 
         /* Body Styling: Add an elegant gradient background with subtle animations */
