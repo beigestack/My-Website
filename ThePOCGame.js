@@ -1,5 +1,7 @@
 let isGamePaused = false;
 let events = [];
+let audio = new Audio("MoN_HHC.mp3");
+audio.loop = true; // Enable looping
 
 function setupEventListeners() {
     document.addEventListener('keydown', (event) => {
@@ -15,12 +17,22 @@ function setupEventListeners() {
 
         if (event.touches.length === 2) {
             // Two-finger tap toggles pause
-            isGamePaused = !isGamePaused;
+            togglePause();
         } else if (event.touches.length === 1 && !isGamePaused) {
             // Single tap makes the player jump
             events.push({ type: 'touchstart' });
         }
     });
+}
+
+function togglePause() {
+    isGamePaused = !isGamePaused;
+
+    if (isGamePaused) {
+        audio.pause(); // Pause music
+    } else {
+        audio.play(); // Resume music
+    }
 }
 
 function getEvents() {
@@ -64,36 +76,10 @@ async function play() {
         context.fillText("Two-Finger Tap or Press ESC or P to Resume", 50, 350);
     }
 
+    audio.play(); // Start playing audio when the game starts
+
     while (true) {
         await new Promise(resolve => setTimeout(resolve, 1000 / 60));
-
-        if (score < 10) {
-            speed = 6;
-        }
-
-        if (score >= 10) {
-            speed = 8;
-        }
-
-        if (score >= 20) {
-            speed = 10;
-        }
-
-        if (score >= 30) {
-            speed = 12;
-        }
-
-        if (score >= 40) {
-            speed = 14;
-        }
-
-        if (score >= 50) {
-            speed = 16;
-        }
-
-        if (score >= 100){
-            speed = 20;
-        }
 
         for (const event of getEvents()) {
             if (event.type === 'keydown') {
@@ -101,7 +87,7 @@ async function play() {
                     if (!isGamePaused) playerVelocity = jumpStrength;
                 }
                 if (event.key === 'p' || event.key === 'Escape') {
-                    isGamePaused = !isGamePaused;
+                    togglePause();
                 }
             }
 
@@ -140,7 +126,7 @@ async function play() {
         context.fillRect(player.x, player.y, player.width, player.height);
         context.fillStyle = "yellow";
         context.fillRect(pipe.x, pipe.y, pipe.width, pipe.height);
-        
+
         showScore();
 
         if (score >= 60) {
@@ -152,9 +138,9 @@ async function play() {
         if (playerVelocity > 75) {
             playerVelocity = 75;
         }
-        
+
         if (isGamePaused) {
-            renderPauseScreen();
+            renderPauseScreen(); // 🎯 Show pause screen when game is paused
         }
     }
 }
@@ -187,22 +173,15 @@ async function main() {
         for (const event of getEvents()) {
             if (event.type === 'keydown' && event.key === 'Enter') {
                 play();
-                var audio = new Audio("MoN_HHC.mp3");
-                audio.loop = true; // Enable looping
-                audio.play();
                 return;
             }
             if (event.type === 'touchstart') {
                 play();
-                var audio = new Audio("MoN_HHC.mp3");
-                audio.loop = true; // Enable looping
-                audio.play();
                 return;
             }
         }
     }
 }
-
 
 function collides(rect1, rect2) {
     return (
