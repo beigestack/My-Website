@@ -187,10 +187,16 @@ async function main() {
         for (const event of getEvents()) {
             if (event.type === 'keydown' && event.key === 'Enter') {
                 play();
+                var audio = new Audio("MoN_HHC.mp3");
+                audio.loop = true; // Enable looping
+                audio.play();
                 return;
             }
             if (event.type === 'touchstart') {
                 play();
+                var audio = new Audio("MoN_HHC.mp3");
+                audio.loop = true; // Enable looping
+                audio.play();
                 return;
             }
         }
