@@ -55,6 +55,15 @@ async function play() {
 
     const player = { x: 30, y: 320, width: 45, height: 60 };
     const pipe = { x: 480, y: Math.floor(Math.random() * 570), width: 45, height: 70 };
+    let coins = { x: 480, y: Math.floor(Math.random() * 570), width: 35, height: 35 };
+    
+    // Ensure the coin is at least 75 pixels away from the pipe
+    if (collides(pipe, coins)) {
+        coins.y += 75;
+        if (coins.y + coins.height > 570) {
+            coins.y = pipe.y - 75 - coins.height; // Move it above instead
+        }
+    }
 
     let playerVelocity = 0;
     const gravity = 0.75;
@@ -112,7 +121,12 @@ async function play() {
             if (pipe.x < -70) {
                 pipe.x = 480;
                 pipe.y = Math.floor(Math.random() * 570);
-                score++;
+            }
+
+            coins.x -= speed;
+            if (coins.x < -70) {
+                coins.x = 480;
+                coins.y = Math.floor(Math.random() * 570);
             }
 
             if (collides(player, pipe)) {
@@ -120,12 +134,20 @@ async function play() {
                 pipe.x = 480;
                 pipe.y = Math.floor(Math.random() * 570);
             }
+
+            if (collides(player, coins)) {
+                score += 1;
+                coins.x = 480;
+                coins.y = Math.floor(Math.random() * 570);
+            }
         }
 
         context.fillStyle = "red";
         context.fillRect(player.x, player.y, player.width, player.height);
         context.fillStyle = "rgb(0, 255, 0)";
         context.fillRect(pipe.x, pipe.y, pipe.width, pipe.height);
+        context.fillStyle = "rgb(255, 255, 0)";
+        context.fillRect(coins.x, coins.y, coins.width, coins.height);
 
         showScore();
 
