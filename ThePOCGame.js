@@ -60,8 +60,6 @@ async function play() {
     // Ensure the coin is at least 75 pixels away from the pipe
     if (collides(pipe, coins)) {
         coins.y += 75;
-        if (coins.y + coins.height > 570) {
-            coins.y = pipe.y - 75 - coins.height; // Move it above instead
         }
     }
 
