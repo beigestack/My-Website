@@ -11,7 +11,21 @@ function setupEventListeners() {
     document.addEventListener('keyup', (event) => {
         events.push({ type: 'keyup', key: event.key });
     });
-    
+
+    document.addEventListener("touchstart", function(event) {
+        event.preventDefault();
+
+        if (event.touches.length === 2) {
+            // Two-finger tap toggles pause
+            togglePause();
+        } else if (event.touches.length === 1 && !isGamePaused) {
+            // Single tap makes the player jump
+            events.push({ type: 'touchstart' });
+        }
+    });
+}
+
+function togglePause() {
     isGamePaused = !isGamePaused;
 
     if (isGamePaused) {
@@ -19,6 +33,7 @@ function setupEventListeners() {
     } else {
         audio.play(); // Resume music
     }
+}
 
 function getEvents() {
     let currentEvents = [...events];
@@ -38,7 +53,7 @@ async function play() {
     gameWindow.width = 480;
     gameWindow.height = 640;
 
-    const player = { x: 75, y: 320, width: 45, height: 60 };
+    const player = { x: 30, y: 320, width: 45, height: 60 };
     const pipe = { x: 480, y: Math.floor(Math.random() * 570), width: 45, height: 70 };
 
     let playerVelocity = 0;
@@ -52,13 +67,13 @@ async function play() {
     }
 
     function renderPauseScreen() {
-        context.fillStyle = "rgba(0, 0, 0, 0.5)";
+        context.fillStyle = "rgba(50, 50, 50, 0.5)";
         context.fillRect(0, 0, gameWindow.width, gameWindow.height);
         context.font = "50px Consolas";
         context.fillStyle = "white";
         context.fillText("Paused", 150, 300);
-        context.font = "20px Consolas";
-        context.fillText("Two-Finger Tap or Press P to Resume", 35, 350);
+        context.font = "16px Consolas";
+        context.fillText("Two-Finger Tap or Press ESC or P to Resume", 50, 350);
     }
 
     audio.play(); // Start playing audio when the game starts
@@ -66,41 +81,13 @@ async function play() {
     while (true) {
         await new Promise(resolve => setTimeout(resolve, 1000 / 60));
 
-        if (score < 10) {
-            speed = 6;
-        }
-
-        if (score >= 10) {
-            speed = 8;
-        }
-
-        if (score >= 20) {
-            speed = 10;
-        }
-
-        if (score >= 30) {
-            speed = 12;
-        }
-
-        if (score >= 40) {
-            speed = 14;
-        }
-
-        if (score >= 50) {
-            speed = 16;
-        }
-
-        if (score >= 100){
-            speed = 20;
-        }
-
         for (const event of getEvents()) {
             if (event.type === 'keydown') {
                 if (event.key === ' ' || event.key === 'ArrowUp') {
                     if (!isGamePaused) playerVelocity = jumpStrength;
                 }
                 if (event.key === 'p' || event.key === 'Escape') {
-                    isGamePaused = !isGamePaused;
+                    togglePause();
                 }
             }
 
@@ -111,7 +98,7 @@ async function play() {
 
         // Clear screen
         context.clearRect(0, 0, gameWindow.width, gameWindow.height);
-        context.fillStyle = "rgba(50, 50, 50, 1)";
+        context.fillStyle = "rgb(50, 50, 50)";
         context.fillRect(0, 0, gameWindow.width, gameWindow.height);
 
         if (!isGamePaused) {
@@ -139,7 +126,7 @@ async function play() {
         context.fillRect(player.x, player.y, player.width, player.height);
         context.fillStyle = "rgb(0, 255, 0)";
         context.fillRect(pipe.x, pipe.y, pipe.width, pipe.height);
-        
+
         showScore();
 
         if (score >= 60) {
@@ -151,9 +138,9 @@ async function play() {
         if (playerVelocity > 75) {
             playerVelocity = 75;
         }
-        
+
         if (isGamePaused) {
-            renderPauseScreen();
+            renderPauseScreen(); // 🎯 Show pause screen when game is paused
         }
     }
 }
@@ -172,14 +159,14 @@ async function main() {
     // Determine font size based on screen width
     let titleFontSize = window.innerWidth <= 600 ? "40px" : "75px"; // Smaller font on mobile
 
-    context.fillStyle = "rgba(50, 50, 50, 1)";
+    context.fillStyle = "rgb(50, 50, 50)";
     context.fillRect(0, 0, gameWindow.width, gameWindow.height);
     context.font = titleFontSize + " Consolas"; // Dynamic font size for title
     context.fillStyle = "white";
     context.fillText("ThePOCGame", 35, 200);
 
     context.font = "20px Consolas";
-    context.fillText("Press Enter or Tap to Play", 75, 600);
+    context.fillText("Press Enter or Tap to Play", 100, 600);
 
     while (true) {
         await new Promise(resolve => setTimeout(resolve, 100));
@@ -195,7 +182,6 @@ async function main() {
         }
     }
 }
-
 
 function collides(rect1, rect2) {
     return (
