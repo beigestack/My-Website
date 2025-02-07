@@ -61,7 +61,6 @@ async function play() {
     if (collides(pipe, coins)) {
         coins.y += 75;
         }
-    }
 
     let playerVelocity = 0;
     const gravity = 0.75;
