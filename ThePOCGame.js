@@ -11,21 +11,7 @@ function setupEventListeners() {
     document.addEventListener('keyup', (event) => {
         events.push({ type: 'keyup', key: event.key });
     });
-
-    document.addEventListener("touchstart", function(event) {
-        event.preventDefault();
-
-        if (event.touches.length === 2) {
-            // Two-finger tap toggles pause
-            togglePause();
-        } else if (event.touches.length === 1 && !isGamePaused) {
-            // Single tap makes the player jump
-            events.push({ type: 'touchstart' });
-        }
-    });
-}
-
-function togglePause() {
+    
     isGamePaused = !isGamePaused;
 
     if (isGamePaused) {
@@ -33,7 +19,6 @@ function togglePause() {
     } else {
         audio.play(); // Resume music
     }
-}
 
 function getEvents() {
     let currentEvents = [...events];
@@ -60,9 +45,71 @@ async function play() {
     const gravity = 0.75;
     const jumpStrength = -12;
 
+    function showScore() {
+        context.font = "20px Consolas";
+        context.fillStyle = "white";
+        context.fillText(`Score: ${score}`, 10, 20);
+    }
+
+    function renderPauseScreen() {
+        context.fillStyle = "rgba(0, 0, 0, 0.5)";
+        context.fillRect(0, 0, gameWindow.width, gameWindow.height);
+        context.font = "50px Consolas";
+        context.fillStyle = "white";
+        context.fillText("Paused", 150, 300);
+        context.font = "20px Consolas";
+        context.fillText("Two-Finger Tap or Press P to Resume", 35, 350);
+    }
+
     audio.play(); // Start playing audio when the game starts
 
-    function gameLoop() {
+    while (true) {
+        await new Promise(resolve => setTimeout(resolve, 1000 / 60));
+
+        if (score < 10) {
+            speed = 6;
+        }
+
+        if (score >= 10) {
+            speed = 8;
+        }
+
+        if (score >= 20) {
+            speed = 10;
+        }
+
+        if (score >= 30) {
+            speed = 12;
+        }
+
+        if (score >= 40) {
+            speed = 14;
+        }
+
+        if (score >= 50) {
+            speed = 16;
+        }
+
+        if (score >= 100){
+            speed = 20;
+        }
+
+        for (const event of getEvents()) {
+            if (event.type === 'keydown') {
+                if (event.key === ' ' || event.key === 'ArrowUp') {
+                    if (!isGamePaused) playerVelocity = jumpStrength;
+                }
+                if (event.key === 'p' || event.key === 'Escape') {
+                    isGamePaused = !isGamePaused;
+                }
+            }
+
+            if (event.type === 'touchstart') {
+                playerVelocity = jumpStrength; // Single tap to jump
+            }
+        }
+
+        // Clear screen
         context.clearRect(0, 0, gameWindow.width, gameWindow.height);
         context.fillStyle = "rgba(50, 50, 50, 1)";
         context.fillRect(0, 0, gameWindow.width, gameWindow.height);
@@ -71,14 +118,8 @@ async function play() {
             playerVelocity += gravity;
             player.y += playerVelocity;
 
-            if (player.y + player.height >= gameWindow.height) {
-                player.y = gameWindow.height - player.height;
-                playerVelocity = 0;
-            }
-            if (player.y < 0) {
-                player.y = 0;
-                playerVelocity = 0;
-            }
+            if (player.y > 640) player.y = 0;
+            if (player.y < 0) player.y = 640;
 
             pipe.x -= speed;
             if (pipe.x < -70) {
@@ -98,20 +139,24 @@ async function play() {
         context.fillRect(player.x, player.y, player.width, player.height);
         context.fillStyle = "rgb(0, 255, 0)";
         context.fillRect(pipe.x, pipe.y, pipe.width, pipe.height);
+        
+        showScore();
 
-        context.font = "20px Consolas";
-        context.fillStyle = "white";
-        context.fillText(`Score: ${score}`, 10, 20);
+        if (score >= 60) {
+            context.font = "20px Consolas";
+            context.fillStyle = "white";
+            context.fillText("ENDLESS MODE", 150, 600);
+        }
 
+        if (playerVelocity > 75) {
+            playerVelocity = 75;
+        }
+        
         if (isGamePaused) {
             renderPauseScreen();
         }
-
-        requestAnimationFrame(gameLoop);
     }
-
-    gameLoop();
-
+}
 
 async function main() {
     document.body.innerHTML = ''; // Clear previous elements
