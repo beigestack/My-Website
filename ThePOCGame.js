@@ -56,11 +56,14 @@ async function play() {
     const player = { x: 30, y: 320, width: 45, height: 60 };
     const pipe = { x: 480, y: Math.floor(Math.random() * 570), width: 45, height: 70 };
     let coins = { x: 480, y: Math.floor(Math.random() * 570), width: 35, height: 35 };
-    
+
     // Ensure the coin is at least 75 pixels away from the pipe
     if (collides(pipe, coins)) {
         coins.y += 75;
+        if (coins.y + coins.height > 570) {
+            coins.y = pipe.y - 75 - coins.height; // Move it above instead
         }
+    }
 
     let playerVelocity = 0;
     const gravity = 0.75;
@@ -85,6 +88,7 @@ async function play() {
     audio.play(); // Start playing audio when the game starts
 
     while (true) {
+
         await new Promise(resolve => setTimeout(resolve, 1000 / 60));
 
         for (const event of getEvents()) {
@@ -96,9 +100,13 @@ async function play() {
                     togglePause();
                 }
             }
+            
+            document.body.onmousedown = function(){
+                if (!isGamePaused) playerVelocity = jumpStrength
+            }
 
             if (event.type === 'touchstart') {
-                playerVelocity = jumpStrength; // Single tap to jump
+                if (!isGamePaused) playerVelocity = jumpStrength
             }
         }
 
