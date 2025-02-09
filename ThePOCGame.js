@@ -147,7 +147,7 @@ async function play() {
             }
         }
 
-        context.fillStyle = "red";
+        context.fillStyle = "rgb(255, 0, 0)";
         context.fillRect(player.x, player.y, player.width, player.height);
         context.fillStyle = "rgb(0, 255, 0)";
         context.fillRect(pipe.x, pipe.y, pipe.width, pipe.height);
