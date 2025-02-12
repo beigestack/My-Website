@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fullscreen Clock</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: "SF Mono", monospace;
+            text-align: center;
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #big-clock {
+            font-size: 125px;
+            font-weight: bold;
+        }
+        #small-clock {
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body onload="openFullscreen()">
+
+    <div id="big-clock">00:00:00</div>
+    <div id="small-clock">00/00/0000, Day</div>
+
+    <script>
+        function updateClock() {
+            let now = new Date();
+            let time = now.toLocaleTimeString('en-GB', { hour12: false });
+            let date = now.toLocaleDateString('en-GB'); 
+            let day = now.toLocaleDateString('en-GB', { weekday: 'long' });
+
+            document.getElementById('big-clock').innerText = time;
+            document.getElementById('small-clock').innerText = `${date}, ${day}`;
+        }
+
+        function openFullscreen() {
+            document.documentElement.requestFullscreen().catch(console.log);
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+
+</body>
+</html>
