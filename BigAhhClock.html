@@ -60,6 +60,11 @@
             document.documentElement.requestFullscreen().catch(console.log);
         }
 
+        document.body.onmousedown = function(){
+                use12Hour = !use12Hour;
+                updateClock(); // Update immediately after toggling
+            }
+
         document.addEventListener("keydown", (event) => {
             if (event.code === "Space") {
                 use12Hour = !use12Hour;
