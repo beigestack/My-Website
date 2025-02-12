@@ -103,11 +103,7 @@ async function play() {
             
             document.body.onmousedown = function(){
                 if (!isGamePaused) playerVelocity = jumpStrength
-            }
-
-            if (event.type === 'touchstart') {
-                if (!isGamePaused) playerVelocity = jumpStrength
-            }
+            }
         }
 
         // Clear screen
