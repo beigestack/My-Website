@@ -6,9 +6,14 @@
     <title>BigAhhClock</title>
     <style>
         body {
+                    @font-face {
+            font-family: 'clockFont';
+            src: url('SFMono-Bold.otf');
+            }
+            
             background-color: black;
             color: white;
-            font-family: "SF Mono", monospace;
+            font-family: "clockFont", monospace;
             text-align: center;
             margin: 0;
             overflow: hidden;
@@ -33,9 +38,17 @@
     <div id="small-clock">00/00/0000, Day</div>
 
     <script>
+        let use12Hour = false;  // Default: 24-hour format
+
         function updateClock() {
             let now = new Date();
-            let time = now.toLocaleTimeString('en-GB', { hour12: false });
+            let options = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: use12Hour };
+            let time = now.toLocaleTimeString('en-US', options);
+
+            if (use12Hour) {
+                time = time.replace("AM", "am").replace("PM", "pm");  // Convert AM/PM to lowercase
+            }
+
             let date = now.toLocaleDateString('en-GB'); 
             let day = now.toLocaleDateString('en-GB', { weekday: 'long' });
 
@@ -46,6 +59,13 @@
         function openFullscreen() {
             document.documentElement.requestFullscreen().catch(console.log);
         }
+
+        document.addEventListener("keydown", (event) => {
+            if (event.code === "Space") {
+                use12Hour = !use12Hour;
+                updateClock(); // Update immediately after toggling
+            }
+        });
 
         setInterval(updateClock, 1000);
         updateClock();
