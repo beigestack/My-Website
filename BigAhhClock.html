@@ -38,6 +38,7 @@
     <div id="small-clock">00/00/0000, Day</div>
 
     <script>
+        let isArrowUp = 1;
         let use12Hour = true;  // Default: 24-hour format
 
         function updateClock() {
@@ -71,6 +72,25 @@
                 updateClock(); // Update immediately after toggling
             }
         });
+
+let originalBgColor = document.body.style.backgroundColor || 'black'; // default to white if no style is set
+
+// Define the color sequence
+let colors = ['blue', 'green', 'red', 'gold', originalBgColor];
+
+// Track the current color index
+let currentColorIndex = 0;
+
+// Add event listener for the up arrow key (keyCode 38)
+document.addEventListener('keydown', function(event) {
+    if (event.keyCode === 38) { // Up arrow key
+        // Change the background color
+        document.body.style.backgroundColor = colors[currentColorIndex];
+
+        // Move to the next color in the cycle
+        currentColorIndex = (currentColorIndex + 1) % colors.length;
+    }
+});
 
         setInterval(updateClock, 1000);
         updateClock();
