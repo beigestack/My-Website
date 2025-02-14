@@ -1,4 +1,4 @@
-# ManikSharma69420.github.io
+# https://maniksharma.xyz
 
 ez
 
