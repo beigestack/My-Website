@@ -24,10 +24,10 @@ flood.disableMessages = false; // Hides the info message.
 
 flood.msg = {};
 flood.msg.info = "&#x1FAA3;";
-flood.msg.rising = "Guess my bad code is leaking again ;-;";
+flood.msg.rising = "Guess my bad code is leaking again ;-; Could u help me by bilging the water? :3";
 flood.msg.falling = "Thanks :3";
 flood.msg.toosoon = "Ooh, wait a minute, I gotta free up the drain";
-flood.msg.one = "Ooh! The drain has backed up.";
+flood.msg.one = "Ooh! The drain has backed up. Could u help me by bilging the water? :3";
 flood.msg.two = "Come on where's the leak NOW?";
 flood.msg.three = "WHERE IS THE GODDAMN LEAK?!";
 flood.msg.four = "Hey could u help me pls im going to look for the leak";
