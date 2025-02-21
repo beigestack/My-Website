@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manik's Browser</title>
+    <link rel="stylesheet" href="SupremeBrowser.css">
+</head>
+<body>
+	<style>
+	@font-face {
+            font-family: 'MyCustomFont';
+            src: url('https://maniksharma.xyz/sysuiHeader.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+	body {
+    font-family: "MyCustomFont";
+	}
+	</style>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search..." />
+        <button onclick="searchFunction()">Search</button>
+    </div>
+
+    <div id="searchResults"></div>
+
+    <script src="SupremeBrowser.js"></script>
+</body>
+</html>
