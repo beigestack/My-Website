@@ -7,5 +7,5 @@ function searchFunction() {
     }
 
     // Redirect to Google with the search query
-    window.location.href = `https://www.google.com/search?q=${query}`;
+    window.location.href = `https://www.duckduckgo.com/search?q=${query}`;
 }
