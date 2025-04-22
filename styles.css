@@ -103,6 +103,25 @@ h1 {
     animation: fadeIn 2s ease-out;
 }
 
+        .section1, .section2 {
+    width: 45%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #fdfdfd;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .section1, .section2 {
+        width: 100%;
+    }
+}
+
+
         /* Fade-in animation */
         @keyframes fadeIn {
             from {
