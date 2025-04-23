@@ -101,7 +101,7 @@ h1 {
     max-width: 1250px; /* Increased max-width */
     backdrop-filter: blur(10px); /* Adds a frosted glass effect */
     animation: fadeIn 2s ease-out;
-    margin-bottom: 750px;
+    margin-bottom: 100px;
 }
 
      .section2 {
