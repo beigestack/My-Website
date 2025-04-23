@@ -138,11 +138,22 @@
             <img
                 title="Hello"
                 src="https://maniksharma.xyz/idle.gif"
-                onmouseover="setHoverGif(this)"
-                onmouseout="setIdleGif(this)"
+                onmouseover="setHoverGifText(this)"
+                onmouseout="setIdleGifText(this)"
                 style="width: 88px; height: 31px; cursor: pointer"
             />
         </a>
+            <script>
+            function setHoverGifText(img) {
+                img.src =
+                    "https://maniksharma.xyz/hover-text.gif?t=" +
+                    new Date().getTime();
+            }
+
+            function setIdleGifText(img) {
+                img.src = "https://maniksharma.xyz/idle.gif";
+            }
+        </script>
         <br>
         <br>
             <a href="https://maniksharma.xyz">
@@ -172,17 +183,6 @@
         </font>
         </div>
     </div>
-    <script>
-            function setHoverGif(img) {
-                img.src =
-                    "https://maniksharma.xyz/hover.gif?t=" +
-                    new Date().getTime();
-            }
-
-            function setIdleGif(img) {
-                img.src = "https://maniksharma.xyz/idle.gif";
-            }
-        </script>
     <script>
         const container = document.querySelector('.container');
         const image = document.getElementById('myImage');
