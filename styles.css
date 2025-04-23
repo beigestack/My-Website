@@ -91,7 +91,7 @@ h1 {
 
 
         /* Centered content container */
-        .section1, .section2, .section3 {
+        .section1, .section2 {
     text-align: center;
     background: rgba(0, 0, 0, 0.6);
     padding: 80px 60px; /* Increased padding */
@@ -102,6 +102,19 @@ h1 {
     backdrop-filter: blur(10px); /* Adds a frosted glass effect */
     animation: fadeIn 2s ease-out;
     margin-bottom: 75px;
+}
+
+.section3 {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 80px 60px; /* Increased padding */
+    border-radius: 30px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    width: 95%; /* Increased width */
+    max-width: 1250px; /* Increased max-width */
+    backdrop-filter: blur(10px); /* Adds a frosted glass effect */
+    animation: fadeIn 2s ease-out;
+    margin-bottom: 25px;
 }
 
         /* Fade-in animation */
