@@ -21,7 +21,6 @@
 body {
     font-family: 'myFont', sans-serif;
     background: #090979
-    background-size: 300% 300%; /* Oversize the background for smooth movement */
     display: flex;
     justify-content: center;
     align-items: center;
