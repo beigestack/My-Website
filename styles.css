@@ -20,7 +20,6 @@
         /* Body Styling: Add an elegant gradient background with subtle animations */
 body {
     font-family: 'myFont', sans-serif;
-    background: #090979
     display: flex;
     justify-content: center;
     align-items: center;
