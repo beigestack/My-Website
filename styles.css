@@ -20,7 +20,7 @@
         /* Body Styling: Add an elegant gradient background with subtle animations */
 body {
     font-family: 'myFont', sans-serif;
-    background: linear-gradient(135deg, #57b9ff, #7fbfff, #4b0082, #0000ff);
+    background: linear-gradient(135deg, #020024, #081783, #00D4FF
     background-size: 300% 300%; /* Oversize the background for smooth movement */
     display: flex;
     justify-content: center;
