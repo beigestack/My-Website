@@ -47,7 +47,7 @@ body {
 
 
 /* DEMO-SPECIFIC STYLES */
-h1 {
+.title {
   color: #fff;
   font-family: headerFont;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
@@ -58,6 +58,12 @@ h1 {
   animation: 
     typing 3.5s steps(17, end) 1s forwards, /* 1s delay before cursor starts blinking */
     blink-caret .5s step-end infinite; /* Cursor blinking continues infinitely */
+ font-size: 5rem;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            color: #ffffff;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 /* The typing effect */
@@ -124,16 +130,6 @@ h1 {
                 opacity: 1;
                 transform: scale(1);
             }
-        }
-
-        /* Styling for heading */
-        .title {
-            font-size: 5rem;
-            font-weight: bold;
-            letter-spacing: 3px;
-            margin-bottom: 20px;
-            color: #ffffff;
-            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
 
         /* Description styling */
