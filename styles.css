@@ -29,7 +29,7 @@ body {
     padding: 20px;
     min-height: 100vh;
     overflow: auto; /* Allow scrolling if needed */
-    animation: gradientShift 10s infinite; /* Infinite smooth animation */
+    animation: gradientShift 5s infinite; /* Infinite smooth animation */
 }
 
 /* Image Styling */
