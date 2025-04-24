@@ -20,7 +20,7 @@
         /* Body Styling: Add an elegant gradient background with subtle animations */
 body {
     font-family: 'myFont', sans-serif;
-    background: linear-gradient(135deg, #020024, #081783, #00D4FF);
+    background: #090979
     background-size: 300% 300%; /* Oversize the background for smooth movement */
     display: flex;
     justify-content: center;
@@ -29,7 +29,6 @@ body {
     padding: 20px;
     min-height: 100vh;
     overflow: auto; /* Allow scrolling if needed */
-    animation: gradientShift 5s infinite; /* Infinite smooth animation */
 }
 
 /* Image Styling */
