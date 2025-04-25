@@ -30,7 +30,7 @@ body {
 }
 
 /* Image Styling */
-        #img {
+        .img {
             display: block;
             margin: 20px auto;
             max-width: 100%;
@@ -40,7 +40,7 @@ body {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        #img:hover {
+        .img:hover {
             transform: scale(1.05);
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
         }
