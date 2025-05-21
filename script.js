@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("https://yt-api-0idm.onrender.com/latest_video")
+  fetch("https://yt-api-0idm.onrender.com")
     .then((res) => res.json())
     .then((data) => {
       const videoId = data.items[0].id.videoId;
