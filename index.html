@@ -1,37 +1,130 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Under Construction</title>
-  <style>
-    body {
-      background: black;
-      color: lime;
-      font-family: monospace;
-      text-align: center;
-      padding: 2rem;
-    }
-    h1 {
-      font-size: 2rem;
-    }
-    p {
-      font-size: 1.2rem;
-      margin: 1.5rem 0;
-    }
-    a {
-      color: cyan;
-      text-decoration: none;
-      font-weight: bold;
-      display: inline-block;
-      margin-top: 1rem;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
-</head>
-<body>
-  <h1>🚧 This Website is Under Construction 🚧</h1>
-  <p>Some links might be broken. Please check back later!</p>
-  <a href="https://maniksharma.xyz/home">🔗 Go to the old site</a>
-</body>
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>maniksharma.xyz</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="url">https://maniksharma.xyz/</div>
+            <nav>
+                <span class="spacer0">/</span>
+                <a class="active" href="/">home</a>
+                <span class="spacer1">/</span>
+                <a href="/about.html">about</a>
+                <span class="spacer2">/</span>
+                <a href="/projects.html">projects</a>
+                <span class="spacer3">/</span>
+                <a href="/blog.html">blog</a>
+                <span class="spacer4">/</span>
+                <a href="/search.html">search</a>
+                <span class="spacer5">/</span>
+            </nav>
+        </header>
+
+        <main>
+            <center>
+                <h1>henlo</h1>
+                <font size="5">
+                <p>i am manik. <br> i am also known as @reiskaek on twitter and youtube (not that you'll know i have very few subs lol). <br> enjoy my website <br> :D</p>
+                </font>
+                <br>
+                <br>
+            </center>
+
+
+            <hr />
+
+            <section class="split">
+                <div class="webrings">
+                    <h2>webrings, buttons and<br />all that good stuff :D</h2>
+                    <br>
+                    <center>
+                    <iframe src="//incr.easrng.net/badge?key=maniksharma" style="background: url(//incr.easrng.net/bg.gif)" title="increment badge" width="88" height="31" frameborder="0"></iframe>
+                    <br>
+                    <br>
+                    <script src="https://silly.possiblyaxolotl.com/ring/webstring.js"></script>
+                    <br>
+                            <br>
+                                <a href="https://maniksharma.xyz/mnaubutton">
+                                <img
+                                    title="Hello"
+                                    src="https://maniksharma.xyz/idle.gif"
+                                    onmouseover="setHoverGifText(this)"
+                                    onmouseout="setIdleGifText(this)"
+                                    style="width: 88px; height: 31px; cursor: pointer"
+                                />
+                            </a>
+                                <script>
+                                function setHoverGifText(img) {
+                                    img.src =
+                                        "https://maniksharma.xyz/hover-text.gif?t=" +
+                                        new Date().getTime();
+                                }
+
+                                function setIdleGifText(img) {
+                                    img.src = "https://maniksharma.xyz/idle.gif";
+                                }
+                            </script>
+                                <a href="https://maniksharma.xyz/mnaubutton">
+                                <img
+                                    title="Hello"
+                                    src="https://maniksharma.xyz/idle.gif"
+                                    onmouseover="setHoverGif(this)"
+                                    onmouseout="setIdleGif(this)"
+                                    style="width: 88px; height: 31px; cursor: pointer"
+                                />
+
+                                <script>
+                                function setHoverGif(img) {
+                                    img.src =
+                                        "https://maniksharma.xyz/hover.gif?t=" +
+                                        new Date().getTime();
+                                }
+
+                                function setIdleGif(img) {
+                                    img.src = "https://maniksharma.xyz/idle.gif";
+                                }
+                            </script>
+                            </a>
+                                <br>
+                                <p>↑ ↑ ↑ Those 2 buttons are my mnaubutton(s)! Click on them for more info! ↑ ↑ ↑</p>
+                            <br>
+                    </center>
+                </div>
+                <center>
+                    <img id="thumbnail" src="" width="400" height="300">
+                    <br>
+                    <br>
+                    <a id="yt-preview">Loading latest video...</i>
+                </center>
+            </section>
+
+            <hr />
+
+            <footer>
+                <h2>my socials</h2>
+                <div class="socials">
+                    <a href="mailto:reiskaek@gmail.com" class="emailbutton>
+                              <span class="icon">
+                                <img style="margin: 0 25px;" src="email_icon.png" alt="Email me!">
+                              </span>
+                            </a>
+                            <a href="https://twitter.com/reiskaek" class="twitterbutton>
+                              <span class="twittericon">
+                                <img style="margin: 0 25px;" src="twitter_logo.png" alt="Check out my twitter!">
+                              </span>
+                            </a>
+                            <a href="https://youtube.com/@reiskaek" class="youtubebutton>
+                              <span class="youtubeicon">
+                                <img style="margin: 0 25px;" src="yt_logo.png" alt="Check out my YouTube!!">
+                              </span>
+                            </a>
+                </div>
+            </footer>
+        </main>
+    </body>
 </html>
