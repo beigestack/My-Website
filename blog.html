@@ -27,6 +27,15 @@
                 })
                 .catch((err) => {
                     console.error("Failed to fetch posts:", err);
+                    const card = document.createElement("div");
+                        card.className = "failure";
+
+                        card.innerHTML = `
+                <h2This blog will work next month!</h2>
+                <p>This is because Render has a limit on how much data you can use on a free plan (im broke my dudes) <a href="https://render.com/docs/free#monthly-usage-limits">Why?</a></p>
+              `;
+
+                        blogContainer.appendChild(card);
                 });
         </script>
     </head>
