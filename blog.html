@@ -27,8 +27,8 @@
                 })
                 .catch((err) => {
     console.error("Failed to fetch posts:", err);
-
-    document.body.innerHTML = `
+    const blogContainer = document.querySelector(".blog");
+    blogContainer.innerHTML = `
       <h2>This blog will work next month!</h2>
       <p>This is because Render has a limit on how much data you can use on a free plan (im broke my dudes) 
       <a href="https://render.com/docs/free#monthly-usage-limits">Why?</a></p>
