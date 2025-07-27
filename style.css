@@ -1,8 +1,15 @@
+@font-face {
+  font-family: "font01";
+  src: url("SpaceMono-Regular.ttf") format("ttf"),
+  font-weight: 700;
+  font-style: normal;
+}
+
 /* Base styles */
 body {
   background-color: #000000;
   color: white;
-  font-family: monospace;
+  font-family: "font01";
   margin: 0;
   padding: 2rem;
 }
