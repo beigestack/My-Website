@@ -1,8 +1,8 @@
 @font-face {
   font-family: "font01";
-  src: url("SpaceMono-Regular.ttf") format("ttf"),
-  font-weight: 700;
-  font-style: normal;
+  src: 
+    local("Space Mono")
+    url("SpaceMono-Regular.ttf") format("truetype"),
 }
 
 /* Base styles */
