@@ -16,11 +16,11 @@ body {
 
 a {
   text-decoration: none;
-  color: #87cefa;
+  color: #f2ecce;
   margin: 0 1rem;
 }
 a:hover {
-  color: #00f;
+  color: #DBD095;
 }
 
 .projects {
