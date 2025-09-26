@@ -49,6 +49,7 @@ nav a {
 }
 .active {
   text-decoration: underline wavy white;
+  font-weight: bold;
 }
 .search-icon {
   margin-left: 0.5rem;
