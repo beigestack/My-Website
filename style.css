@@ -35,6 +35,14 @@ header .url {
     font-size: 13px;
 }
 
+#whyisntthisonthenavbar {
+  color: #92a8d1; /* idek or care atp */
+}
+#whyisntthisonthenavbar:hover {
+  color: #ff7f50; /* coral */
+}
+
+
 nav a {
   font-size: 1.5rem;
   font-weight: bold;
