@@ -20,17 +20,6 @@ body {
   background: rgba(242, 236, 206, 0.5);
 }
 
-a {
-  font-weight: bold;
-  text-decoration: none;
-  color: #2658a7;
-  margin: 0 1rem;
-}
-a:hover {
-  font-weight: bold;
-  color: #ef3193;
-}
-
 .projects {
     display: flex;
     flex-direction: column;
@@ -141,10 +130,21 @@ hr {
   padding: 0.5rem;
   font-size: 1rem;
 }
-a,
-a:hover,
 nav a,
 nav a:hover,
 .active {
     font-family: 'Playfair Display', serif;
+}
+
+a {
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+  text-decoration: none;
+  color: #2658a7;
+  margin: 0 1rem;
+}
+a:hover {
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+  color: #ef3193;
 }
