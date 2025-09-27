@@ -18,14 +18,13 @@ body {
   background: rgba(242, 236, 206, 0.5);
 }
 
-
 a {
   text-decoration: none;
-  color: #f2ecce;
+  color: #ef3193;
   margin: 0 1rem;
 }
 a:hover {
-  color: #DBD095;
+  color: #2658a7;
 }
 
 .projects {
@@ -41,10 +40,6 @@ header .url {
 
 .about{
     font-size: 13px;
-}
-
-h2 {
-  font-family: 'Playfair Display', serif;
 }
 
 nav a {
@@ -66,7 +61,9 @@ h1 {
 }
 
 h2 {
+  font-family: 'Playfair Display', serif;
   font-size: 1.5rem;
+  color: #f2ecce;
 }
 
 .blog {
