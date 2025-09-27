@@ -61,6 +61,7 @@ nav a:hover {
   font-family: 'Playfair Display', serif;
 }
 .active {
+  font-family: 'Playfair Display', serif;
   font-size: 2rem;
   text-decoration: underline wavy white;
   font-weight: bold;
