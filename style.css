@@ -39,10 +39,10 @@ nav a {
   font-size: 1.5rem;
   font-weight: bold;
   text-decoration: underline white;
-  color: #2658a7;
+  color: #5A5B9F;
 }
 nav a:hover {
-  color: #ef3193; /* hover */
+  color: #ff7f50; /* hover */
   font-weight: bold;
 }
 .active {
@@ -143,3 +143,7 @@ a {
   color: #725c49;
   margin: 0 1rem;
 }
+a:hover{
+  color: #f2ecce;
+}
+
