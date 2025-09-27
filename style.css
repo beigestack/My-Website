@@ -21,12 +21,16 @@ body {
 }
 
 a {
+  font-weight: bold;
   text-decoration: none;
   color: #2658a7;
   margin: 0 1rem;
+  font-family: 'Playfair Display', serif;
 }
 a:hover {
+  font-weight: bold;
   color: #ef3193;
+  font-family: 'Playfair Display', serif;
 }
 
 .projects {
@@ -46,11 +50,15 @@ header .url {
 
 nav a {
   font-size: 1.5rem;
+  font-weight: bold;
   text-decoration: underline white;
   color: #2658a7;
+  font-family: 'Playfair Display', serif;
 }
 nav a:hover {
   color: #ef3193; /* hover */
+  font-weight: bold;
+  font-family: 'Playfair Display', serif;
 }
 .active {
   font-size: 2rem;
