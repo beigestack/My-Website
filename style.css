@@ -44,10 +44,11 @@ header .url {
 }
 
 nav a {
-  font-size: 2rem;
+  font-size: 1rem;
   text-decoration: underline white;
 }
 .active {
+  font-size: 2rem;
   text-decoration: underline wavy white;
   font-weight: bold;
 }
