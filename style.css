@@ -47,6 +47,10 @@ header .url {
 nav a {
   font-size: 1.5rem;
   text-decoration: underline white;
+  color: #2658a7;
+}
+nav a:hover {
+  color: #ef3193; /* hover */
 }
 .active {
   font-size: 2rem;
