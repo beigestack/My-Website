@@ -43,6 +43,10 @@ header .url {
     font-size: 13px;
 }
 
+h2 {
+  font-family: 'Playfair Display', serif;
+}
+
 nav a {
   font-size: 1.5rem;
   text-decoration: underline white;
