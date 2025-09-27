@@ -25,12 +25,10 @@ a {
   text-decoration: none;
   color: #2658a7;
   margin: 0 1rem;
-  font-family: 'Playfair Display', serif;
 }
 a:hover {
   font-weight: bold;
   color: #ef3193;
-  font-family: 'Playfair Display', serif;
 }
 
 .projects {
@@ -53,15 +51,12 @@ nav a {
   font-weight: bold;
   text-decoration: underline white;
   color: #2658a7;
-  font-family: 'Playfair Display', serif;
 }
 nav a:hover {
   color: #ef3193; /* hover */
   font-weight: bold;
-  font-family: 'Playfair Display', serif;
 }
 .active {
-  font-family: 'Playfair Display', serif;
   font-size: 2rem;
   text-decoration: underline wavy white;
   font-weight: bold;
@@ -145,4 +140,11 @@ hr {
   color: white;
   padding: 0.5rem;
   font-size: 1rem;
+}
+a,
+a:hover,
+nav a,
+nav a:hover,
+.active {
+    font-family: 'Playfair Display', serif;
 }
