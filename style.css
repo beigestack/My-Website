@@ -140,11 +140,6 @@ a {
   font-family: 'Playfair Display', serif;
   font-weight: bold;
   text-decoration: none;
-  color: #2658a7;
+  color: #725c49;
   margin: 0 1rem;
-}
-a:hover {
-  font-family: 'Playfair Display', serif;
-  font-weight: bold;
-  color: #ef3193;
 }
