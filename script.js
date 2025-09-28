@@ -1,26 +1,47 @@
-document.addEventListener("DOMContentLoaded", () => {
-  fetch("https://yt-api-0idm.onrender.com")
-    .then((res) => res.json())
-    .then((data) => {
-      const videoId = data.items[0].id.videoId;
-      const title = data.items[0].snippet.title;
-      const link = `https://youtube.com/watch?v=${videoId}`;
-      const thumbnail = `https://img.youtube.com/vi/${videoId}/0.jpg`;
-      const preview = document.getElementById("yt-preview");
-      const img = document.getElementById("thumbnail");
+const container = document.getElementById("bubbles-container");
+const bubbleCount = 25; // number of bubbles
+const colors = ["#87CEFA", "#00BFFF", "#ADD8E6", "#B0E0E6"]; // Windows bubble shades
+const vw = window.innerWidth;
+const vh = window.innerHeight;
 
-      if (img) {
-        img.src = thumbnail;
-      }
+class Bubble {
+  constructor() {
+    this.el = document.createElement("div");
+    this.el.classList.add("bubble");
+    this.size = Math.random() * 40 + 20; // 20px to 60px
+    this.el.style.width = `${this.size}px`;
+    this.el.style.height = `${this.size}px`;
+    this.el.style.background = colors[Math.floor(Math.random() * colors.length)];
+    this.x = Math.random() * vw;
+    this.y = Math.random() * vh;
+    this.dx = (Math.random() - 0.5) * 2; // horizontal speed
+    this.dy = (Math.random() - 0.5) * 2; // vertical speed
+    container.appendChild(this.el);
+    this.update();
+  }
 
-      if (preview) {
-        preview.href = link;
-        preview.textContent = `${title}`;
-      }
-    })
-    .catch((err) => {
-      console.error("Failed to load video:", err);
-      const preview = document.getElementById("yt-preview");
-      if (preview) preview.textContent = "Failed to load video.";
-    });
+  update() {
+    this.x += this.dx;
+    this.y += this.dy;
+
+    // bounce off edges
+    if (this.x <= 0 || this.x + this.size >= vw) this.dx *= -1;
+    if (this.y <= 0 || this.y + this.size >= vh) this.dy *= -1;
+
+    this.el.style.left = `${this.x}px`;
+    this.el.style.top = `${this.y}px`;
+
+    requestAnimationFrame(() => this.update());
+  }
+}
+
+// create bubbles
+for (let i = 0; i < bubbleCount; i++) {
+  new Bubble();
+}
+
+// adjust for window resize
+window.addEventListener("resize", () => {
+  vw = window.innerWidth;
+  vh = window.innerHeight;
 });
