@@ -13,15 +13,20 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     // Handlers
+    function right(){
     document.getElementById("top-right").onclick = () =>
       window.location.href = sites[(index - 1 + sites.length) % sites.length];
+    }
 
+    function middle(){
     document.getElementById("middle").onclick = () =>
       window.location.href = hub;
+    }
 
+    function left(){
     document.getElementById("bottom-left").onclick = () =>
       window.location.href = sites[(index + 1) % sites.length];
-
+    }
   } catch (err) {
     console.error("Failed to load webring sites:", err);
   }
