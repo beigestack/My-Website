@@ -28,6 +28,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.getElementById("bottom-left").onclick = () =>
       window.location.href = sites[(index + 1) % sites.length];
     }
+
+    right();
+    middle();
+    left();
+    
   } catch (err) {
     console.error("Failed to load webring sites:", err);
   }
