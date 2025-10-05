@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
 
 @font-face {
   font-family: "font01";
@@ -68,7 +68,7 @@ h1 {
 }
 
 h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Instrument Serif', serif;
   font-size: 1.5rem;
   color: #f2ecce;
 }
@@ -142,11 +142,11 @@ hr {
 nav a,
 nav a:hover,
 .active {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Instrument Serif', serif;
 }
 
 a {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Instrument Serif', serif;
   font-weight: bold;
   text-decoration: none;
   color: #91a7d0;
