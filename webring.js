@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", async () => {
-  const hub = "https://frutigeraerowebring.maniksharma.xyz";
+  const hub = "https://maniksharma.xyz/webring";
   const current = window.location.origin;
 
   try {
