@@ -9,30 +9,35 @@ document.addEventListener("DOMContentLoaded", async () => {
     const index = sites.indexOf(current);
 
     if (index === -1) {
-      document.write("The webmaster hasn't added me to the frutiger aero webring yet >:(");
+      document.write("The webmaster hasn't added me to the Frutiger Aero webring yet >:(");
       return;
     }
 
-    // Handlers
-    function right(){
-    document.getElementById("top-right").onclick = () =>
-      window.location.href = sites[(index - 1 + sites.length) % sites.length];
+    const nextBtn = document.getElementById("top-right");
+    const hubBtn = document.getElementById("middle");
+    const prevBtn = document.getElementById("bottom-left");
+
+    if (nextBtn) {
+      nextBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        window.location.href = sites[(index + 1) % sites.length];
+      });
     }
 
-    function middle(){
-    document.getElementById("middle").onclick = () =>
-      window.location.href = hub;
+    if (prevBtn) {
+      prevBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        window.location.href = sites[(index - 1 + sites.length) % sites.length];
+      });
     }
 
-    function left(){
-    document.getElementById("bottom-left").onclick = () =>
-      window.location.href = sites[(index + 1) % sites.length];
+    if (hubBtn) {
+      hubBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        window.location.href = hub;
+      });
     }
 
-    right();
-    middle();
-    left();
-    
   } catch (err) {
     console.error("Failed to load webring sites:", err);
   }
