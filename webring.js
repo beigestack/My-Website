@@ -1,9 +1,10 @@
 document.addEventListener("DOMContentLoaded", async () => {
   const hub = "https://maniksharma.xyz/webring";
+  const sites_host = "https://maniksharma.xyz";
   const current = window.location.origin;
 
   try {
-    const res = await fetch(hub + "/sites.json");
+    const res = await fetch(sites_host + "/sites.json");
     const sites = await res.json();
     const index = sites.indexOf(current);
 
