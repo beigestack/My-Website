@@ -44,13 +44,16 @@
 <p>to get the image on your page, paste the following code and change the widget link to either widget-1 or widget-2 (currently widget-1)</p>
 <br>
 <textarea readonly>
-<img src="https://maniksharma.xyz/frutiger-aero-webring-widgets/widget-1.png" alt="widget-1" width="352" height="124" usemap="#webring-map">
-<map name="webring-map">
-  <area shape="rect" coords="302,0,352,50" id="top-right" alt="Next" href="#">
-  <area shape="rect" coords="50,37,302,87" id="middle" alt="Hub" href="#">
-  <area shape="rect" coords="0,74,50,124" id="bottom-left" alt="Prev" href="#">
-</map>
-<script src="https://maniksharma.xyz/webring.js" defer></script>
+<div class="frutiger-webring" style="max-width:100%; text-align:center;">
+  <img src="https://maniksharma.xyz/frutiger-aero-webring-widgets/widget-1.png" 
+       alt="widget-1" style="max-width:100%; height:auto;" usemap="#webring-map">
+  <map name="webring-map">
+    <area shape="rect" coords="302,0,352,50" alt="Next" href="#">
+    <area shape="rect" coords="50,37,302,87" alt="Hub" href="#">
+    <area shape="rect" coords="0,74,50,124" alt="Prev" href="#">
+  </map>
+  <script src="https://maniksharma.xyz/webring.js" defer></script>
+</div>
 </textarea>
 <br>
 <p>well thats it! you have the webring on your page!</p>
