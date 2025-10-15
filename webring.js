@@ -26,13 +26,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     const prevBtn = container.querySelector("#bottom-left");
 
     const navigateParent = (url) => {
-      try {
-        // Try to navigate parent window
-        window.top.location.href = url;
-      } catch {
-        // fallback: open in a new tab
-        window.open(url, "_blank");
-      }
+      // Method 1: always navigate the parent page
+      window.top.location.href = url;
     };
 
     if (nextBtn) {
