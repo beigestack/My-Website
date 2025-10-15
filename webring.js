@@ -1,21 +1,29 @@
 document.addEventListener("DOMContentLoaded", async () => {
   const hub = "https://maniksharma.xyz/webring";
   const sites_host = "https://maniksharma.xyz";
-  const current = window.location.origin;
+  
+  // Get the parent site URL from iframe query param: ?site=https://example.com
+  const params = new URLSearchParams(window.location.search);
+  const current = params.get("site") || ""; // fallback to empty if not provided
+
+  const container = document.querySelector(".frutiger-webring") || document.body;
 
   try {
     const res = await fetch(sites_host + "/sites.json");
     const sites = await res.json();
+
     const index = sites.indexOf(current);
 
     if (index === -1) {
-      document.write("The webmaster hasn't added me to the Frutiger Aero webring yet >:(");
+      const msg = document.createElement("p");
+      msg.textContent = "The webmaster hasn't added me to the Frutiger Aero webring yet >:(";
+      container.appendChild(msg);
       return;
     }
 
-    const nextBtn = document.getElementById("top-right");
-    const hubBtn = document.getElementById("middle");
-    const prevBtn = document.getElementById("bottom-left");
+    const nextBtn = container.querySelector("#top-right");
+    const hubBtn = container.querySelector("#middle");
+    const prevBtn = container.querySelector("#bottom-left");
 
     if (nextBtn) {
       nextBtn.addEventListener("click", (e) => {
@@ -40,5 +48,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   } catch (err) {
     console.error("Failed to load webring sites:", err);
+    const msg = document.createElement("p");
+    msg.textContent = "Failed to load webring sites.";
+    container.appendChild(msg);
   }
 });
