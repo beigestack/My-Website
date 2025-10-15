@@ -5,18 +5,25 @@
   <title>Frutiger Aero Webring Widget</title>
 </head>
 <body>
-  <div style="display:inline-block; max-width:100%; text-align:center; border:1px solid #ccc; padding:5px; box-sizing:border-box;">
+  <!-- Container div with class for JS scoping -->
+  <div class="frutiger-webring" style="display:inline-block; max-width:100%; text-align:center; border:1px solid #ccc; padding:5px; box-sizing:border-box;">
+    
+    <!-- Widget image -->
     <img 
       src="https://maniksharma.xyz/frutiger-aero-webring-widgets/widget-1.png" 
       alt="widget-1" 
       style="max-width:100%; height:auto;" 
       usemap="#webring-map"
     >
+    
+    <!-- Clickable areas for Next, Hub, Prev -->
     <map name="webring-map">
-      <area shape="rect" coords="302,0,352,50" alt="Next" href="#">
-      <area shape="rect" coords="50,37,302,87" alt="Hub" href="#">
-      <area shape="rect" coords="0,74,50,124" alt="Prev" href="#">
+      <area shape="rect" coords="302,0,352,50" alt="Next" id="top-right" href="#">
+      <area shape="rect" coords="50,37,302,87" alt="Hub" id="middle" href="#">
+      <area shape="rect" coords="0,74,50,124" alt="Prev" id="bottom-left" href="#">
     </map>
+    
+    <!-- JS for navigation -->
     <script src="https://maniksharma.xyz/webring.js" defer></script>
   </div>
 </body>
