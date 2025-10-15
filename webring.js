@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", async () => {
   const hub = "https://maniksharma.xyz/webring";
   const sites_host = "https://maniksharma.xyz";
-  
+
   // Get the parent site URL from iframe query param: ?site=https://example.com
   const params = new URLSearchParams(window.location.search);
-  const current = params.get("site") || ""; // fallback to empty if not provided
+  const current = params.get("site") || hub; // fallback to hub if not provided
 
   const container = document.querySelector(".frutiger-webring") || document.body;
 
@@ -25,24 +25,34 @@ document.addEventListener("DOMContentLoaded", async () => {
     const hubBtn = container.querySelector("#middle");
     const prevBtn = container.querySelector("#bottom-left");
 
+    const navigateParent = (url) => {
+      try {
+        // Try to navigate parent window
+        window.top.location.href = url;
+      } catch {
+        // fallback: open in a new tab
+        window.open(url, "_blank");
+      }
+    };
+
     if (nextBtn) {
       nextBtn.addEventListener("click", (e) => {
         e.preventDefault();
-        window.location.href = sites[(index + 1) % sites.length];
+        navigateParent(sites[(index + 1) % sites.length]);
       });
     }
 
     if (prevBtn) {
       prevBtn.addEventListener("click", (e) => {
         e.preventDefault();
-        window.location.href = sites[(index - 1 + sites.length) % sites.length];
+        navigateParent(sites[(index - 1 + sites.length) % sites.length]);
       });
     }
 
     if (hubBtn) {
       hubBtn.addEventListener("click", (e) => {
         e.preventDefault();
-        window.location.href = hub;
+        navigateParent(hub);
       });
     }
 
