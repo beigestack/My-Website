@@ -63,7 +63,7 @@ h1 {
 }
 
 h2 {
-  font-family: 'Instrument Serif', serif;
+  font-family: 'Anybody', serif;
   font-size: 1.5rem;
   color: #f2ecce;
 }
@@ -137,11 +137,11 @@ hr {
 nav a,
 nav a:hover,
 .active {
-    font-family: 'Instrument Serif', serif;
+    font-family: 'Anyobdy', sans-serif;
 }
 
 a {
-  font-family: 'Instrument Serif', serif;
+  font-family: 'Anybody', sans-serif;
   font-weight: bold;
   text-decoration: none;
   color: #91a7d0;
