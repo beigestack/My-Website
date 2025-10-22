@@ -1,3 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>sem(a)ver</title>
+<style>
+/* Base body */
+body {
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    background-color: #fafafa;
+    color: #111;
+    line-height: 1.6;
+    padding: 2rem;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Headings */
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #222;
+    margin-bottom: 0.5rem;
+}
+
+/* Paragraphs */
+p {
+    margin-bottom: 1rem;
+}
+
+/* Strong text */
+strong {
+    color: #000;
+}
+
+/* Code */
+code {
+    background-color: #f3f3f3;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: 'Fira Code', monospace;
+}
+
+/* Lists */
+ul, ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* List items spacing */
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* Highlighted sections */
+[data-start] {
+    background-color: #fff4e5;
+    padding: 0.2rem 0.4rem;
+    border-left: 3px solid #ff9800;
+}
+
+/* Links (if any) */
+a {
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Optional fancy touch: ma tag */
+code.ma {
+    background-color: #ffe5e5;
+    border-left: 3px solid #e53935;
+    padding: 0.2rem 0.5rem;
+    font-weight: bold;
+}
+</style>
+</head>
+<body>
+
 <h1>sem(a)ver</h1>
 <p>To understand this, you&nbsp;<strong>must</strong> know semver.</p>
 <p>&nbsp;</p>
@@ -9,57 +91,44 @@
 <p><code>ma</code>(major) is for a major change. Use it for api rewrites (having the same commands, so being backwards compatible) or a major improvement, that is&nbsp;<strong>STILL</strong> backwards compatible.</p>
 <p><strong>READ ON:</strong> Do&nbsp;<strong>NOT</strong> use ma for a MAJOR CHANGE. ma, while being shorthand for MAJOR, is merely a human indicator. It shows "stuff has changed! Check out the changelog! you'll love it and most likely like the new stuff!"</p>
 <p>&nbsp;</p>
-<p data-start="261" data-end="290"><strong data-start="261" data-end="288">Key points to remember:</strong></p>
-<ol data-start="292" data-end="1123">
-<li data-start="292" data-end="445">
-<p data-start="295" data-end="325"><strong data-start="295" data-end="323">This tags are optional.</strong></p>
-<ul data-start="329" data-end="445">
-<li data-start="329" data-end="400">
-<p data-start="331" data-end="400">Only use them when you feel a release <strong data-start="369" data-end="397">deserves extra attention</strong>.</p>
-</li>
-<li data-start="404" data-end="445">
-<p data-start="406" data-end="445">Not every release needs <code data-start="430" data-end="434">ma.</code></p>
-</li>
+<p><strong>Key points to remember:</strong></p>
+<ol>
+<li>
+<p><strong>This tags are optional.</strong></p>
+<ul>
+<li>Only use them when you feel a release <strong>deserves extra attention</strong>.</li>
+<li>Not every release needs <code>ma</code>.</li>
 </ul>
 </li>
-<li data-start="447" data-end="624">
-<p data-start="450" data-end="498"><strong data-start="450" data-end="496">They are human signals, not version rules.</strong></p>
-<ul data-start="502" data-end="624">
-<li data-start="502" data-end="564">
-<p data-start="504" data-end="564">The numeric version (<code data-start="525" data-end="532">X.Y.Z</code>) still follows normal SemVer.</p>
-</li>
-<li data-start="568" data-end="624">
-<p data-start="570" data-end="624"><code data-start="570" data-end="574">ma</code> and <code data-start="579" data-end="583">mi</code> just tell users: &ldquo;Hey, pay attention!&rdquo;</p>
-</li>
+<li>
+<p><strong>They are human signals, not version rules.</strong></p>
+<ul>
+<li>The numeric version (<code>X.Y.Z</code>) still follows normal SemVer.</li>
+<li><code>ma</code> just tells users: “Hey, pay attention!”</li>
 </ul>
 </li>
-<li data-start="626" data-end="761">
-<p data-start="629" data-end="666"><strong data-start="629" data-end="664">Patch releases remain the same.</strong></p>
-<ul data-start="670" data-end="761">
-<li data-start="670" data-end="761">
-<p data-start="672" data-end="761">Bug fixes or very minor improvements don&rsquo;t need a tag unless you think it&rsquo;s noteworthy.</p>
-</li>
+<li>
+<p><strong>Patch releases remain the same.</strong></p>
+<ul>
+<li>Bug fixes or very minor improvements don’t need a tag unless you think it’s noteworthy.</li>
 </ul>
 </li>
-<li data-start="763" data-end="982">
-<p data-start="766" data-end="782"><strong data-start="766" data-end="780">Placement:</strong></p>
-<ul data-start="786" data-end="982">
-<li data-start="786" data-end="982">
-<p data-start="788" data-end="839">Add the tag at the <strong data-start="807" data-end="836">end of the version string</strong>:</p>
-<ul data-start="845" data-end="982">
-<li data-start="845" data-end="903">
-<p data-start="847" data-end="903">Example: <code data-start="856" data-end="866">1.4.0-ma</code> &rarr; big, backward-compatible rewrite</p>
-</li>
+<li>
+<p><strong>Placement:</strong></p>
+<ul>
+<li>Add the tag at the <strong>end of the version string</strong>:</li>
+<ul>
+<li>Example: <code class="ma">1.4.0-ma</code> → big, backward-compatible rewrite</li>
+</ul>
 </ul>
 </li>
-</ul>
-</li>
-<li data-start="984" data-end="1123">
-<p data-start="987" data-end="1023"><strong data-start="987" data-end="1021">Release notes are your friend.</strong></p>
-<ul data-start="1027" data-end="1123">
-<li data-start="1027" data-end="1123">
-<p data-start="1029" data-end="1123">Even with <code data-start="1039" data-end="1043">ma</code>, explain what changed in the changelog so users know why it&rsquo;s tagged.</p>
-</li>
+<li>
+<p><strong>Release notes are your friend.</strong></p>
+<ul>
+<li>Even with <code class="ma">ma</code>, explain what changed in the changelog so users know why it’s tagged.</li>
 </ul>
 </li>
 </ol>
+
+</body>
+</html>
