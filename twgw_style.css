@@ -1,0 +1,84 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and background */
+body {
+    font-family:  "IBM Plex Sans JP", sans-serif;
+    background: linear-gradient(135deg, #f1e9d2, #f5f5dc);
+    color: #000;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+/* Wrapper */
+.wrapper {
+    width: 65%;
+    text-align: center;
+    background-color: rgba(242, 245, 235, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+
+/* Headings */
+h1, h2 {
+    margin: 20px 0;
+}
+
+/* Paragraphs */
+p {
+    margin: 15px 0;
+    line-height: 1.6;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+th, td {
+    border: 1px solid #000;
+    padding: 8px 12px;
+}
+th {
+    background-color: #e0e0e0;
+}
+
+/* Images */
+img {
+    margin: 20px auto;
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #000;
+    border-radius: 5px;
+}
+
+/* Links shimmer */
+a {
+    color: #555;
+    text-decoration: none;
+    background: linear-gradient(90deg, #555, #aaa, #555);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 2s linear infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 1rem;
+    color: #555;
+}
+
