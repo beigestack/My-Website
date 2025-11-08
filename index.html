@@ -6,6 +6,10 @@
   <meta name="theme-color" content="#fff">
   <meta name="viewport" content="width=device-width, initial-scale=1.0,
                                  maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https:;">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
   <title>damn cool (troll) website bro</title>
   <style>/* Copyright 2017 The Chromium Authors
  * Use of this source code is governed by a BSD-style license that can be
@@ -1545,4 +1549,5 @@ let showingDetails=false;let lastData=null;function toggleHelpBox(){showingDetai
   document.getElementById("details").style.display = "none";
 </script>
 </body>
+
 
